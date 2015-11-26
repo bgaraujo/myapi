@@ -1,0 +1,10 @@
+26-11-2015 19:42:11 - [{"errno":1062,"sqlstate":"23000","error":"Duplicate entry 'Vista Park' for key 'name_UNIQUE'"}]
+26-11-2015 20:32:11 - {"error":"required field"}
+26-11-2015 20:35:11 - [{"errno":1054,"sqlstate":"42S22","error":"Unknown column 'janitorl' in 'field list'"}]
+26-11-2015 20:46:11 - {"error":"required field"}
+26-11-2015 20:47:11 - [{"errno":1054,"sqlstate":"42S22","error":"Unknown column 'floors' in 'field list'"}]
+26-11-2015 20:48:11 - [{"errno":1054,"sqlstate":"42S22","error":"Unknown column 'floors' in 'field list'"}]
+26-11-2015 20:57:11 - {"error":"required field"}
+26-11-2015 20:58:11 - {"error":"required field"}
+26-11-2015 20:59:11 - {"error":"required field"}
+26-11-2015 22:47:11 - {"error":"required field"}

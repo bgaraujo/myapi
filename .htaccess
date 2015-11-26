@@ -1,0 +1,4 @@
+RewriteEngine On    						# Turn on the rewriting engine
+RewriteRule    ^api/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$		index.php?module=$1&mode=$2   	[QSA,L]
+RewriteRule    ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$			index.php?module=$1&mode=$2		[QSA,L]
+RewriteRule    ^([A-Za-z0-9-]+)/?$							index.php?module=$1    			[QSA,L]

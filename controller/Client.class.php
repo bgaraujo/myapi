@@ -20,4 +20,8 @@ class Client extends AppMysql{
 		"question" => array("required" => true),
 		"reply" => array("required" => true)
 		);
+
+	public function login($user,$password){
+		
+	}
 }

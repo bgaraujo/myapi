@@ -5,7 +5,7 @@ class Parking extends AppMysql{
 		"id" => array("ignore" => true),
 		"id_condominium" => array("required" => true),
 		"id_garage" => array("required" => true),
-		"id_dweller" => array("required" => true),
+		"id_client" => array("required" => true),
 		"floor" => array("required" => true),
 		"access" => array(),
 		"identifier" => array("required" => true),

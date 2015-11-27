@@ -29,7 +29,13 @@ class Routes{
 				$controller = new Garage;
 				break;
 			case "parking":
-				$controller = new Garage;
+				$controller = new Parking;
+				break;
+			case "warning":
+				$controller = new Warning;
+				break;
+			case "common-area":
+				$controller = new CommonArea;
 				break;
 
 			default:

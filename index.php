@@ -1,10 +1,13 @@
 <?php
     include("controller\config\config.php");
+    
     include("controller\AppMysql.php");
-    $class = dir("controller");
+
+    $path = "model";
+    $class = dir($path);
     while($file = $class->read()){
         if(strpos($file , "class") > 0){
-            include("controller\\$file");
+            include("$path\\$file");
         }
     }
     //Route

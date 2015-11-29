@@ -1,14 +1,24 @@
 <?php
-
+	/**
+		Generic class to manage database
+	*/
 	Class AppMysql {
 		public $name = "Teste Mysql OK";
 
+		/**
+			Create fields with attribute fields
+		*/
 		function __construct(){
 			foreach ($this->fields as $key => $value) {
 				$this->$key = null;
 			}
 		}
 
+		/**
+			Insert data to database
+			@param = object
+			@return = true or false with log
+		*/
 		public function create($object = null){
 			$this->convertPost();
 			if(!$this->verifyRequired())
@@ -29,6 +39,11 @@
 			return $this->query($query);
 		}
 
+		/**
+			Verify if field is required based in your attribute
+			@param object
+			@return false if have something wrong
+		*/
 		public function verifyRequired(){
 			foreach ($this->fields as $name => $detail) {
 				if(isset($detail["required"]) && $detail["required"] == true){
@@ -41,11 +56,20 @@
 			return true;
 		}
 
+		/**
+			Conection with database
+			@return Object connection
+		*/
 		protected function connect(){
 			$conn = new mysqli(HOST,USER,PASSWORD,DB);
 			return $conn;
 		}
 
+		/**
+			execute query
+			@param query string
+			@return true or false
+		*/
 		private function query($query){
 			$query = str_replace("#", PREFIX, $query);
 			$conn = $this->connect();
@@ -57,12 +81,18 @@
 			return true;
 		}
 
+		/**
+			convert post to object
+		*/
 		private function convertPost(){
 			foreach ($this->fields as $name => $detail) {
 				$this->$name = (isset($_POST[$name]))?$_POST[$name]:null;
 			}
 		}
 
+		/**
+			Create log file
+		*/
 		public function log($log){
 			$path = "log/".date("d-m-Y",time()).".txt";
 			$txt = fopen($path, "a");

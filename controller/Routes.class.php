@@ -37,6 +37,22 @@ class Routes{
 			case "common-area":
 				$controller = new CommonArea;
 				break;
+			case "research":
+				$controller = new Research;
+				break;
+			case "answers":
+				$controller = new Answers;
+				break;
+			case "result":
+				$controller = new Result;
+				break;
+			case "booking":
+				$controller = new Booking;
+				break;
+			case "event":
+				$controller = new Event;
+				break;
+
 
 			default:
 				echo json_encode(array("error" => "invalid module"));

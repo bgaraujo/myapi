@@ -21,7 +21,10 @@ class Client extends AppMysql{
 		"reply" => array("required" => true)
 		);
 
-	public function login($user,$password){
-		
+	public function login(){
+		$email = $_POST["email"];
+		$password = $_POST["password"];
+		$query = "SELECT * FROM {$this->table} WHERE password = \"$password\" and email = \"$email\";";
+		return $this->query($query);
 	}
 }

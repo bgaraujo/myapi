@@ -53,7 +53,6 @@ class Routes{
 				$controller = new Event;
 				break;
 
-
 			default:
 				echo json_encode(array("error" => "invalid module"));
 				return false;
@@ -75,6 +74,14 @@ class Routes{
 
 			case 'delete':
 				$return = $controller->create();
+				break;
+
+			case 'delete':
+				$return = $controller->create();
+				break;
+
+			case 'login':
+				$return = $controller->login();
 				break;
 			
 			default:

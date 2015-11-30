@@ -70,15 +70,19 @@
 			@param query string
 			@return true or false
 		*/
-		private function query($query){
+		public function query($query){
 			$query = str_replace("#", PREFIX, $query);
 			$conn = $this->connect();
-			$conn->query($query);
+			$result = $conn->query($query);
 			if($conn->error_list){
 				$this->log($conn->error_list);
 				return false;
 			}
-			return true;
+			$exit = Array();
+			while($row = $result->fetch_array()){
+				$exit[] = $row;
+			}
+			return $exit;
 		}
 
 		/**
